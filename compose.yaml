@@ -1,0 +1,67 @@
+name: sectf
+
+x-app: &app
+  build:
+    context: ./docker/app
+    args:
+      USER_ID: ${HOST_UID:-1000}
+      GROUP_ID: ${HOST_GID:-1000}
+  image: sectf-app:dev
+  volumes:
+    - ./:/var/www/html
+  depends_on:
+    pgsql:
+      condition: service_healthy
+    redis:
+      condition: service_started
+
+services:
+  app:
+    <<: *app
+    ports:
+      - "${APP_PORT:-8080}:8080"
+
+  worker:
+    <<: *app
+    command: ["php", "/var/www/html/artisan", "queue:work", "--tries=3", "--sleep=1"]
+    healthcheck:
+      disable: true
+
+  reverb:
+    <<: *app
+    command: ["php", "/var/www/html/artisan", "reverb:start", "--host=0.0.0.0", "--port=8081"]
+    ports:
+      - "${REVERB_HOST_PORT:-8081}:8081"
+    healthcheck:
+      disable: true
+
+  assets:
+    image: node:22-bookworm-slim
+    user: "${HOST_UID:-1000}:${HOST_GID:-1000}"
+    environment:
+      npm_config_cache: /tmp/.npm
+    working_dir: /app
+    volumes:
+      - ./:/app
+    command: sh -c "npm ci && npm run build -- --watch"
+
+  pgsql:
+    image: postgres:17-alpine
+    environment:
+      POSTGRES_DB: sectf
+      POSTGRES_USER: sectf
+      POSTGRES_PASSWORD: sectf
+    volumes:
+      - pgsql:/var/lib/postgresql/data
+    ports:
+      - "${DB_HOST_PORT:-54329}:5432"
+    healthcheck:
+      test: ["CMD", "pg_isready", "-U", "sectf"]
+      interval: 3s
+      retries: 20
+
+  redis:
+    image: redis:7-alpine
+
+volumes:
+  pgsql:

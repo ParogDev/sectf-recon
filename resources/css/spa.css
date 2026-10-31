@@ -1,0 +1,88 @@
+@import 'tailwindcss';
+
+@source '../js/spa';
+@source '../views/spa.blade.php';
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+    --font-sans: 'Instrument Sans', ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji';
+    --font-mono: 'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+
+    --animate-fade-in: fade-in 0.25s ease-out both;
+    --animate-slide-in: slide-in 0.3s cubic-bezier(0.16, 1, 0.3, 1) both;
+    --animate-pulse-ring: pulse-ring 1.8s ease-out infinite;
+
+    @keyframes fade-in {
+        from { opacity: 0; transform: translateY(-4px); }
+        to { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes slide-in {
+        from { opacity: 0; transform: translateX(24px); }
+        to { opacity: 1; transform: translateX(0); }
+    }
+
+    @keyframes pulse-ring {
+        0% { box-shadow: 0 0 0 0 color-mix(in oklab, var(--color-emerald-500) 60%, transparent); }
+        100% { box-shadow: 0 0 0 8px transparent; }
+    }
+}
+
+@layer base {
+    *,
+    ::after,
+    ::before,
+    ::backdrop {
+        border-color: var(--color-zinc-200);
+    }
+
+    .dark *,
+    .dark ::after,
+    .dark ::before,
+    .dark ::backdrop {
+        border-color: var(--color-zinc-800);
+    }
+
+    html {
+        color-scheme: light;
+        scrollbar-gutter: stable;
+    }
+
+    html.dark {
+        color-scheme: dark;
+    }
+
+    ::-webkit-scrollbar {
+        width: 10px;
+        height: 10px;
+    }
+
+    ::-webkit-scrollbar-thumb {
+        border: 3px solid transparent;
+        border-radius: 999px;
+        background: var(--color-zinc-300);
+        background-clip: padding-box;
+    }
+
+    .dark ::-webkit-scrollbar-thumb {
+        background: var(--color-zinc-700);
+        background-clip: padding-box;
+    }
+}
+
+@utility surface {
+    @apply rounded-xl border border-zinc-200 bg-white shadow-xs dark:border-zinc-800 dark:bg-zinc-900;
+}
+
+@utility surface-muted {
+    @apply rounded-xl border border-zinc-200 bg-zinc-50 dark:border-zinc-800 dark:bg-zinc-900/60;
+}
+
+@utility focus-ring {
+    @apply outline-none focus-visible:ring-2 focus-visible:ring-sky-500 focus-visible:ring-offset-2 focus-visible:ring-offset-white dark:focus-visible:ring-offset-zinc-950;
+}
+
+@utility kbd {
+    @apply inline-flex h-5 min-w-5 items-center justify-center rounded border border-zinc-300 bg-zinc-100 px-1 font-mono text-[10px] text-zinc-600 dark:border-zinc-700 dark:bg-zinc-800 dark:text-zinc-400;
+}

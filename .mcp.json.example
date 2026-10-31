@@ -1,0 +1,8 @@
+{
+    "mcpServers": {
+        "sectf": {
+            "type": "http",
+            "url": "https://YOUR-HOST.YOUR-TAILNET.ts.net/mcp"
+        }
+    }
+}

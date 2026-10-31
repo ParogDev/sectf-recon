@@ -1,0 +1,118 @@
+{
+  "_meta": {
+    "event": "HackFest 2026 SECTF",
+    "source": "HackFest_SECTF_Flags_Bilingual_Organiser.pdf",
+    "extracted": "2026-10-13",
+    "note": "Points column reconciled from EN+FR tables by position (pdftotext misaligned it). Verify sections 03/04/05 against the PDF before trusting totals.",
+    "scoring": {
+      "osint_multiplier": 0.5,
+      "call_answered": 1.0,
+      "call_willing_but_unable": 0.5,
+      "phone_rule": "Only numbers documented in the OSINT dossier (or learned during a call) may be dialed."
+    }
+  },
+  "categories": [
+    {
+      "id": "01", "name_en": "Logistics", "name_fr": "Logistique",
+      "flags": [
+        {"id": "01-01", "pts": 5,  "en": "Is IT support handled in-house or outsourced?", "fr": "Le soutien informatique est-il géré à l'interne ou externalisé?"},
+        {"id": "01-02", "pts": 10, "en": "Obtain information about the badges used.", "fr": "Obtenir des informations sur les badges utilisés."},
+        {"id": "01-03", "pts": 5,  "en": "Who delivers their packages?", "fr": "Qui assure la livraison de leurs colis?"},
+        {"id": "01-04", "pts": 10, "en": "What time do deliveries occur?", "fr": "À quelle heure les livraisons ont-elles lieu?"},
+        {"id": "01-05", "pts": 5,  "en": "Do they have a cafeteria?", "fr": "Ont-ils une cafétéria?"},
+        {"id": "01-06", "pts": 5,  "en": "Who provides food service?", "fr": "Qui assure la restauration?"},
+        {"id": "01-07", "pts": 10, "en": "Who handles offsite backups?", "fr": "Qui gère les sauvegardes hors site?"},
+        {"id": "01-08", "pts": 10, "en": "Identify offsite-backup pickup dates (bonus).", "fr": "Identifier les dates de ramassage des sauvegardes hors site (bonus).", "bonus": true},
+        {"id": "01-09", "pts": 5,  "en": "Do they have offsite backups?", "fr": "Ont-ils des sauvegardes hors site?"},
+        {"id": "01-10", "pts": 7,  "en": "How is document disposal handled?", "fr": "Comment les documents sont-ils éliminés?"},
+        {"id": "01-11", "pts": 10, "en": "Are authentication tokens used with passwords?", "fr": "Utilisent-ils des jetons d'authentification avec les mots de passe?"},
+        {"id": "01-12", "pts": 10, "en": "Is disk encryption used?", "fr": "Le chiffrement des disques est-il utilisé?"}
+      ]
+    },
+    {
+      "id": "02", "name_en": "Employee information", "name_fr": "Renseignements sur les employés",
+      "flags": [
+        {"id": "02-01", "pts": 5,  "en": "How long has the contact worked for the company?", "fr": "Depuis combien de temps la personne travaille-t-elle pour l'entreprise?"},
+        {"id": "02-02", "pts": 10, "en": "On which days of the month are employees paid?", "fr": "Quels jours du mois les employés sont-ils payés?"},
+        {"id": "02-03", "pts": 20, "en": "What is the employee termination process?", "fr": "Quel est le processus de cessation d'emploi?"},
+        {"id": "02-04", "pts": 20, "en": "What is included in new-hire orientation?", "fr": "Que comprend l'orientation des nouveaux employés?"},
+        {"id": "02-05", "pts": 5,  "en": "What are employee schedules (start/end, breaks, lunch)?", "fr": "Quels sont les horaires des employés (début/fin, pauses, dîner)?"}
+      ]
+    },
+    {
+      "id": "03", "name_en": "Onsite-pretext intelligence", "name_fr": "Renseignements pour prétextes sur place",
+      "flags": [
+        {"id": "03-01", "pts": 5,  "en": "Is there a cleaning/janitorial service?", "fr": "Y a-t-il un service de nettoyage ou de conciergerie?"},
+        {"id": "03-02", "pts": 10, "en": "What is the cleaning/janitorial provider's name?", "fr": "Quel est le nom du fournisseur de nettoyage ou de conciergerie?"},
+        {"id": "03-03", "pts": 5,  "en": "Is there a pest-control contract?", "fr": "Existe-t-il un contrat de lutte antiparasitaire?"},
+        {"id": "03-04", "pts": 10, "en": "Which company handles onsite vending machines?", "fr": "Quelle entreprise gère les distributrices sur place?"},
+        {"id": "03-05", "pts": 5,  "en": "Who handles trash/dumpster removal?", "fr": "Qui s'occupe des ordures et des bennes?"},
+        {"id": "03-06", "pts": 10, "en": "Identify trash pickup dates (bonus).", "fr": "Identifier les jours de collecte des ordures (bonus).", "bonus": true},
+        {"id": "03-07", "pts": 5,  "en": "Is there a document-shredding vendor?", "fr": "Ont-ils un fournisseur de déchiquetage de documents?"},
+        {"id": "03-08", "pts": 10, "en": "Identify shredding pickup dates (bonus).", "fr": "Identifier les dates de collecte pour le déchiquetage (bonus).", "bonus": true},
+        {"id": "03-09", "pts": 5,  "en": "Do employees wear badges?", "fr": "Les employés portent-ils des badges?"},
+        {"id": "03-10", "pts": 15, "en": "Describe the badge.", "fr": "Décrire le badge."},
+        {"id": "03-11", "pts": 10, "en": "Who manages the company's social media accounts?", "fr": "Qui gère les comptes de médias sociaux de l'entreprise?"}
+      ]
+    },
+    {
+      "id": "04", "name_en": "Company security", "name_fr": "Sécurité de l'entreprise",
+      "flags": [
+        {"id": "04-01", "pts": 10, "en": "When was the most recent security-awareness training?", "fr": "Quand a eu lieu la plus récente formation de sensibilisation à la sécurité?"},
+        {"id": "04-02", "pts": 10, "en": "Is there video surveillance at the location?", "fr": "Y a-t-il de la vidéosurveillance sur place?"},
+        {"id": "04-03", "pts": 20, "en": "Where are the cameras located?", "fr": "Où les caméras sont-elles situées?"},
+        {"id": "04-04", "pts": 5,  "en": "Is the building protected by security systems?", "fr": "Le bâtiment est-il protégé par des systèmes de sécurité?"},
+        {"id": "04-05", "pts": 5,  "en": "Is there a third-party security guard company?", "fr": "Ont-ils recours à une agence de gardiennage externe?"},
+        {"id": "04-06", "pts": 10, "en": "Identify the security guard company.", "fr": "Identifier l'agence de gardiennage."},
+        {"id": "04-07", "pts": 10, "en": "Are there password-construction restrictions?", "fr": "Existe-t-il des exigences de composition des mots de passe?"},
+        {"id": "04-08", "pts": 10, "en": "Is USB access restricted?", "fr": "L'accès USB est-il restreint?"},
+        {"id": "04-09", "pts": 10, "en": "Is there a corporate VPN, and what type?", "fr": "Utilisent-ils un VPN d'entreprise? De quel type?"},
+        {"id": "04-10", "pts": 5,  "en": "Are websites (e.g., social media) blocked?", "fr": "Certains sites Web (p. ex., réseaux sociaux) sont-ils bloqués?"},
+        {"id": "04-11", "pts": 10, "en": "Who makes the web proxy?", "fr": "Quel est le fabricant du mandataire Web (proxy)?"},
+        {"id": "04-12", "pts": 10, "en": "Who makes the antivirus software?", "fr": "Quel est le fournisseur de l'antivirus?"},
+        {"id": "04-13", "pts": 20, "en": "What antivirus version is used?", "fr": "Quelle version de l'antivirus est utilisée?"},
+        {"id": "04-14", "pts": 10, "en": "Is there a dedicated information-security team?", "fr": "Y a-t-il une équipe dédiée à la sécurité de l'information?"},
+        {"id": "04-15", "pts": 5,  "en": "Are rotating-code key fobs used?", "fr": "Des porte-clés à code tournant sont-ils utilisés?"},
+        {"id": "04-16", "pts": 10, "en": "Is public-key encryption used?", "fr": "Le chiffrement à clé publique est-il utilisé?"}
+      ]
+    },
+    {
+      "id": "05", "name_en": "Company-wide technology", "name_fr": "Technologies à l'échelle de l'entreprise",
+      "flags": [
+        {"id": "05-01", "pts": 10, "en": "Which operating system is used?", "fr": "Quel système d'exploitation est utilisé?"},
+        {"id": "05-02", "pts": 15, "en": "Which OS service pack/version?", "fr": "Quel ensemble de correctifs ou quelle version du système?"},
+        {"id": "05-03", "pts": 10, "en": "Which application opens PDF documents?", "fr": "Quel logiciel sert à ouvrir les PDF?"},
+        {"id": "05-04", "pts": 15, "en": "Which PDF application version?", "fr": "Quelle version de ce logiciel PDF?"},
+        {"id": "05-05", "pts": 5,  "en": "Which browser is used?", "fr": "Quel navigateur est utilisé?"},
+        {"id": "05-06", "pts": 15, "en": "What is the exact browser version?", "fr": "Quelle est la version exacte du navigateur?"},
+        {"id": "05-07", "pts": 10, "en": "Which cloud vendor is used?", "fr": "Quel fournisseur infonuagique est utilisé?"},
+        {"id": "05-08", "pts": 15, "en": "What version of that browser? [original repeated flag]", "fr": "Quelle version de ce navigateur? [répétition originale]", "duplicate_of": "05-06"},
+        {"id": "05-09", "pts": 5,  "en": "Which email client is used?", "fr": "Quel client de messagerie est utilisé?"},
+        {"id": "05-10", "pts": 15, "en": "What email-client version is used?", "fr": "Quelle version du client de messagerie?"},
+        {"id": "05-11", "pts": 5,  "en": "Is there a PBX system?", "fr": "Y a-t-il un système PBX?"},
+        {"id": "05-12", "pts": 15, "en": "Is cloud computing used; which provider? [overlaps 05-07]", "fr": "Utilisent-ils l'infonuagique; quel fournisseur? [chevauchement]", "overlaps": "05-07"},
+        {"id": "05-13", "pts": 10, "en": "Can they view Flash content? [legacy]", "fr": "Peuvent-ils consulter du contenu Flash? [technologie obsolète]"},
+        {"id": "05-14", "pts": 15, "en": "Which outbound ports are open?", "fr": "Quels ports sortants sont ouverts?"},
+        {"id": "05-15", "pts": 5,  "en": "Is there an intranet?", "fr": "Y a-t-il un intranet?"},
+        {"id": "05-16", "pts": 10, "en": "Which video-conferencing platform is used?", "fr": "Quelle plateforme de visioconférence est utilisée?"}
+      ]
+    },
+    {
+      "id": "06", "name_en": "Other technology", "name_fr": "Autres technologies",
+      "flags": [
+        {"id": "06-01", "pts": 5,  "en": "Is wireless networking used?", "fr": "Le réseau sans fil est-il utilisé?"},
+        {"id": "06-02", "pts": 15, "en": "What is the ESSID?", "fr": "Quel est le nom ESSID?"},
+        {"id": "06-03", "pts": 15, "en": "What computer make/model is used?", "fr": "Quelles marque et modèle d'ordinateur sont utilisés?"},
+        {"id": "06-04", "pts": 10, "en": "Which mobile devices are used?", "fr": "Quels appareils mobiles sont utilisés?"},
+        {"id": "06-05", "pts": 5,  "en": "Are there publicly accessible terminals?", "fr": "Y a-t-il des postes informatiques accessibles au public?"},
+        {"id": "06-06", "pts": 5,  "en": "Is network access available in conference rooms?", "fr": "L'accès réseau est-il offert dans les salles de conférence?"}
+      ]
+    },
+    {
+      "id": "07", "name_en": "Call-only objective", "name_fr": "Objectif pendant l'appel seulement",
+      "flags": [
+        {"id": "07-01", "pts": 50, "call_only": true, "en": "Persuade the target to visit a URL to download a file (owned by the contestant or nonexistent).", "fr": "Amener la cible à consulter une URL pour télécharger un fichier (appartenant au concurrent ou inexistant)."}
+      ]
+    }
+  ]
+}
